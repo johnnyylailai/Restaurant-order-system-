@@ -1,0 +1,23 @@
+#include "Get_Amount.hpp"
+#include <iostream>
+
+using namespace std;
+
+int Get_Amount() {
+    int amount;
+    bool isValid = false; 
+
+    while (!isValid) {
+        cout << "Enter amount (1-5): ";
+        cin >> amount;
+
+        // Verify validity: Min amount: 1, Max amount: 5
+        if (amount >= 1 && amount <= 5) {
+            isValid = true;
+        } else {
+            cout << "Invalid amount. Please enter a value between 1 and 5.\n";
+            isValid = false;
+        }
+    }
+    return amount;
+}
